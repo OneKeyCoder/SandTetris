@@ -43,10 +43,6 @@
                     Command="{Binding DetailCommand}"/>
                 <Button
                     WidthRequest="100"
-                    Text="Save" 
-                    Command="{Binding SaveCommand}"/>
-                <Button
-                    WidthRequest="100"
                     Text="Export PDF" 
                     Command="{Binding ExportCommand}"/>
             </HorizontalStackLayout>

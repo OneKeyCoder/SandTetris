@@ -28,7 +28,7 @@ public partial class DepartmentPageViewModel : ObservableObject, IQueryAttributa
         OnAppearing();
     }
 
-    private async void OnAppearing()
+    public async void OnAppearing()
     {
         await LoadDepartments();
     }

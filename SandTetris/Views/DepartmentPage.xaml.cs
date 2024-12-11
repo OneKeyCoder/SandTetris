@@ -11,4 +11,14 @@ public partial class DepartmentPage : ContentPage
 		InitializeComponent();
         BindingContext = vm;
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is DepartmentPageViewModel viewModel)
+        {
+            viewModel.OnAppearing();
+        }
+    }
 }

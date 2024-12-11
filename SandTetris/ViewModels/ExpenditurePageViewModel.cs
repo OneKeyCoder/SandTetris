@@ -15,7 +15,7 @@ using SandTetris.Services;
 
 namespace SandTetris.ViewModels;
 
-public partial class ExpenditurePageViewModel : ObservableObject, IQueryAttributable
+public partial class ExpenditurePageViewModel : ObservableObject
 {
     [ObservableProperty]
     private string searchbar = "";
@@ -61,14 +61,7 @@ public partial class ExpenditurePageViewModel : ObservableObject, IQueryAttribut
             Years.Add(i.ToString());
         }
 
-        OnAppearing();
         _departmentRepo = departmentRepo;
-    }
-
-    public void ApplyQueryAttributes(IDictionary<string, object> query)
-    {
-        if (query.ContainsKey("done"))
-            OnAppearing();
     }
 
     [RelayCommand]
@@ -87,7 +80,7 @@ public partial class ExpenditurePageViewModel : ObservableObject, IQueryAttribut
         OnAppearing();
     }
 
-    private async void OnAppearing()
+    public async void OnAppearing()
     {
         await LoadSalarySummaries();
     }

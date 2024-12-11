@@ -23,10 +23,9 @@ public partial class DepartmentCheckInPageViewModel : ObservableObject
     public DepartmentCheckInPageViewModel(IDepartmentRepository departmentRepository)
     {
         _departmentRepository = departmentRepository;
-        OnAppearing();
     }
 
-    private async void OnAppearing()
+    public async void OnAppearing()
     {
         await LoadDepartments();
     }

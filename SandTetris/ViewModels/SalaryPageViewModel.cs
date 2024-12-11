@@ -138,15 +138,6 @@ public partial class SalaryPageViewModel : ObservableObject, IQueryAttributable
     }
 
     [RelayCommand]
-    async Task Save()
-    {
-        await Shell.Current.GoToAsync($"..", new Dictionary<string, object>
-        {
-            { "done", null }
-        });
-    }
-
-    [RelayCommand]
     async Task Detail()
     {
         if (selectedSalary == null)

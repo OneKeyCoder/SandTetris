@@ -98,7 +98,7 @@ public partial class CheckInDetailPageViewModel : ObservableObject, IQueryAttrib
         {
             var checkInList = await _checkInRepository.GetAllCheckInSummariesAsync(departmentId);
             CheckInSummaries = new ObservableCollection<CheckInSummary>(checkInList);
-        }
+        } 
         else
         {
             var checkInList = await _checkInRepository.GetCheckInSummariesAsync(departmentId, int.Parse(SelectedMonth), int.Parse(SelectedYear));
@@ -279,7 +279,7 @@ public partial class CheckInDetailPageViewModel : ObservableObject, IQueryAttrib
                             await _databaseService.AddOrUpdateCheckInAsync(checkIn);
                         }
                     }
-
+                    await LoadCheckInSummaries();
                     await Shell.Current.DisplayAlert("Success", "Check-In data imported successfully.", "OK");
                 }
                 catch (Exception ex)

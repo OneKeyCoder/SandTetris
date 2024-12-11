@@ -9,4 +9,14 @@ public partial class ExpenditurePage : ContentPage
 		InitializeComponent();
         BindingContext = vm;
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is ExpenditurePageViewModel viewModel)
+        {
+            viewModel.OnAppearing();
+        }
+    }
 }

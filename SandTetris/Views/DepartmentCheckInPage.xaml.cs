@@ -9,4 +9,13 @@ public partial class DepartmentCheckInPage : ContentPage
 		InitializeComponent();
         BindingContext = vm;
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is DepartmentCheckInPageViewModel viewModel)
+        {
+            viewModel.OnAppearing(); 
+        }
+    }
 }
